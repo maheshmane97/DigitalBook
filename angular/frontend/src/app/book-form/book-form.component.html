@@ -72,3 +72,20 @@
     </tbody>
     </table>
 </div>
+
+
+<p>Find Books</p>
+<label>Title:</label>
+<input [(ngModel)]='book.title'/>
+<br><br>
+<label>Price:</label>
+<input [(ngModel)]='book.price' type="number"/>
+<br><br>
+<label>Publisher:</label>
+<input [(ngModel)]='book.publisher'/>
+<br><br>
+<label>Author:</label>
+<input [(ngModel)]='book.author'/>
+<br><br>
+<button (click)='find()'>Find</button>
+

@@ -17,4 +17,8 @@ export class BookService {
   getBooks(){
     return this.client.get(API_URL)
   }
+
+  findBooks(title:string, price: number, publisher:string, author:string){
+   return this.client.get(API_URL+"/books/search?title="+title+"&price="+price+"&publisher="+publisher+"&author="+author)
+  }
 }

@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import {HttpClientModule} from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 const routes: Routes=[
   {path:'digitalbooks', component:BookFormComponent }
@@ -18,7 +20,7 @@ const routes: Routes=[
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
+    AppRoutingModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes), Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
