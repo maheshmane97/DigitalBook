@@ -8,10 +8,10 @@ import Book from '../entity/Book';
 })
 export class BookFormComponent implements OnInit {
   book: Book=new Book(101, 'abc.com', 'Comic', 'Iron Man', 'Marvel', '22-02-1995', 300.00, 'Marvel comic', 'true', 'XYZ' )
-  title1:string='AAA';
-  price1:number=1;
-  publisher1:string='AAA';
-  author1:string='AAA'
+  title:string='Hulk';
+  price:number=300.00;
+  publisher:string='ABC';
+  author:string='ABC'
 
   constructor(public bookService: BookService) { }
   books:any=[];
@@ -43,7 +43,7 @@ export class BookFormComponent implements OnInit {
 
    find(){
     console.log("Book Searched");
-    const observable=this.bookService.findBooks(this.title1, this.price1,this.publisher1,this.author1)
+    const observable=this.bookService.findBooks(this.title, this.price,this.publisher,this.author)
     observable.subscribe(books1=>{
       this.books1=books1;
       console.log(books1);
