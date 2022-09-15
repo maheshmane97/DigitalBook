@@ -1,0 +1,38 @@
+<h2>Book Form</h2>
+<style type="text/css">
+    label{
+        width: 130px;
+        display: inline-block;
+    }
+</style>
+<label for="bookId">BookId:</label>
+<input [(ngModel)]='book.bookId' type="number"/>
+<br><br>
+<label for="bookId">BookLogo:</label>
+<input [(ngModel)]='book.bookLogo'/>
+<br><br>
+<label for="bookId">Category:</label>
+<input [(ngModel)]='book.category'/>
+<br><br>
+<label for="bookId">Title:</label>
+<input [(ngModel)]='book.title'/>
+<br><br>
+<label for="author">Author:</label>
+<input [(ngModel)]='book.author'/>
+<br><br>
+<label for="bookId">Publisher:</label>
+<input [(ngModel)]='book.publisher'/>
+<br><br>
+<label for="bookId">PublishedDate:</label>
+<input [(ngModel)]='book.publishedDate'/>
+<br><br>
+<label for="bookId">Price:</label>
+<input [(ngModel)]='book.price' type="number"/>
+<br><br>
+<label for="bookId">Content:</label>
+<input [(ngModel)]='book.content'/>
+<br><br>
+<label for="bookId">Active:</label>
+<input [(ngModel)]='book.active'/>
+<br><br>
+<button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='save()'>Submit</button>

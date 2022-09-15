@@ -1,5 +1,16 @@
-<nav>
-    <a routerLink='/digitalbooks'>Digital Books</a>
-</nav>
+<p>
+    <mat-toolbar color="primary">
+      <span>Digital Books</span>
+      <a mat-button routerLink='/digitalbooks' routerLinkActive="active" style="margin-right: 1%;">Save Books</a>
+      <a mat-button routerLink='/digitalbooks/author' routerLinkActive="active" style="margin-right: 1%;">Find Book</a>
+
+    </mat-toolbar>
+  </p>
+
+<!-- <nav>
+    <a mat-button routerLink='/digitalbooks' routerLinkActive="active" style="margin-right: 1%;">Digital Books</a>
+    <a routerLink='/digitalbooks/author' routerLinkActive="active" style="margin-right: 1%;">Save Book</a>
+    
+</nav> -->
 
 <router-outlet></router-outlet>
