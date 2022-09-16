@@ -13,17 +13,20 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { AddBookComponent } from './add-book/add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { ReaderFormComponent } from './reader-form/reader-form.component';
 
 const routes: Routes=[
   {path:'digitalbooks', component:AddBookComponent },
-  {path:'digitalbooks/author', component:BookFormComponent }
+  {path:'digitalbooks/author', component:BookFormComponent },
+  {path:'digitalbooks/readers', component:ReaderFormComponent}
 ]
 @NgModule({
   declarations: [
     
     AppComponent,
     BookFormComponent,
-    AddBookComponent
+    AddBookComponent,
+    ReaderFormComponent
   ],
   imports: [
     BrowserModule, MatButtonModule, MatToolbarModule, MatIconModule,

@@ -19,6 +19,8 @@ export class AddBookComponent implements OnInit {
     const obeservable=this.bookService.getBooks();
     obeservable.subscribe(books=>{
       this.books=books;
+      console.log(books);
+      
     })
   }
 

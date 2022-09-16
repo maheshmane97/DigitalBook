@@ -6,33 +6,72 @@
     }
 </style>
 <label for="bookId">BookId:</label>
-<input [(ngModel)]='book.bookId' type="number"/>
+<input [(ngModel)]='book.bookId' type="number" placeholder="Enter a BookID"/>
 <br><br>
 <label for="bookId">BookLogo:</label>
-<input [(ngModel)]='book.bookLogo'/>
+<input [(ngModel)]='book.bookLogo' placeholder="Enter a BookLogo URL"/>
 <br><br>
 <label for="bookId">Category:</label>
-<input [(ngModel)]='book.category'/>
+<input [(ngModel)]='book.category' placeholder="Enter a Book Category"/>
 <br><br>
 <label for="bookId">Title:</label>
-<input [(ngModel)]='book.title'/>
+<input [(ngModel)]='book.title' placeholder="Enter a Book Title"/>
 <br><br>
 <label for="author">Author:</label>
-<input [(ngModel)]='book.author'/>
+<input [(ngModel)]='book.author' placeholder="Enter a Author Name"/>
 <br><br>
 <label for="bookId">Publisher:</label>
-<input [(ngModel)]='book.publisher'/>
+<input [(ngModel)]='book.publisher' placeholder="Enter Book Publisher Name"/>
 <br><br>
 <label for="bookId">PublishedDate:</label>
-<input [(ngModel)]='book.publishedDate'/>
+<input [(ngModel)]='book.publishedDate' placeholder="dd-mm-yyyy"/>
 <br><br>
 <label for="bookId">Price:</label>
 <input [(ngModel)]='book.price' type="number"/>
 <br><br>
 <label for="bookId">Content:</label>
-<input [(ngModel)]='book.content'/>
+<input [(ngModel)]='book.content' placeholder="Enter a Book content Shortly"/>
 <br><br>
 <label for="bookId">Active:</label>
-<input [(ngModel)]='book.active'/>
+<input [(ngModel)]='book.active' placeholder="true/false"/>
 <br><br>
 <button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='save()'>Submit</button>
+
+<div *ngIf="books.length>0; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <h1>List Of Books</h1>
+<div style="text-align: center;">
+<table class="table" style="text-align: justify;" border="1" >
+    <thead style="background-color: rgb(97, 228, 141);">
+        <tr>
+            <th>BookId</th>
+            <th>BookLogo</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>PublishedDate</th>
+            <th>Price</th>
+            <th>Content</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let book of books'>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookId}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookLogo}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.category}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.title}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.author}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publisher}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publishedDate}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.price}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.content}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book.active}}</span></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
