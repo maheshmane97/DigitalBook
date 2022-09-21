@@ -15,7 +15,6 @@
     <input [(ngModel)]='bookId' type="number" placeholder="Enter a bookId"/>
     <br><br>
 <button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='search()'>Search</button>
-
 </div>
 <div *ngIf="book1.length>0; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
@@ -38,16 +37,16 @@
     </thead>
     <tbody>
         <tr *ngFor='let book of book1'>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookId}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookLogo}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.category}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.title}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.author}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publisher}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publishedDate}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.price}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.content}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.active}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.bookId}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.bookLogo}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.category}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.title}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.author}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.publisher}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.publishedDate}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.price}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.content}}</span></td>
+            <td style="background-color: rgb(206, 236, 214);"><span>{{book1.active}}</span></td>
         </tr>
     </tbody>
     </table>

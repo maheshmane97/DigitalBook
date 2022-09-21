@@ -10,6 +10,7 @@ import Book from '../entity/Book';
 export class AddBookComponent implements OnInit {
   book: Book=new Book(101, 'abc.com', 'Comic', 'Iron Man', 'Marvel', '22-02-1995', 300.00, 'Marvel comic', 'true', 'XYZ' )
   books:any=[];
+  message:any=''
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {
@@ -33,8 +34,9 @@ export class AddBookComponent implements OnInit {
       this.getBooks();
     },
     (error)=>{
-      alert('Something Went Wrong')
-    }
-    )
+      console.log("error:", error);
+    this.message=error;
+    this.message="Something Went wrong.! Please check Details"
+    })
   }
 }
