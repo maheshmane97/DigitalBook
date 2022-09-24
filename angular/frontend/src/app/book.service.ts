@@ -10,7 +10,7 @@ export class BookService {
 
   constructor(public client: HttpClient) { }
   saveBook(book: Book){
-    const authorId=101;
+    const authorId=1;
     return this.client.post(API_URL+"/author/"+101+"/books", book)
   }
 

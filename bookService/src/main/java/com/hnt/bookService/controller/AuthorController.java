@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hnt.bookService.entity.Author;
 import com.hnt.bookService.entity.ERole;
 import com.hnt.bookService.entity.Role;
 import com.hnt.bookService.entity.User;
@@ -32,20 +31,17 @@ import com.hnt.bookService.response.JwtResponse;
 import com.hnt.bookService.response.MessageResponse;
 import com.hnt.bookService.security.jwt.JwtUtils;
 import com.hnt.bookService.security.services.UserDetailsImpl;
-import com.hnt.bookService.service.AuthorService;
+
+/**
+ * @author cogjava3185_MaheshMane
+ * Here is Authentication done
+ * SignUp and SignIn request Handled
+ *
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/userauth")
 public class AuthorController {
-	
-	@Autowired
-	AuthorService authorService;
-	
-	@PostMapping
-	public Integer addAuthor(@Valid @RequestBody Author author) {
-		authorService.addAuthor(author);
-		return author.getId();
-	}
 	
 	@Autowired
 	AuthenticationManager authenticationManager;
