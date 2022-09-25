@@ -1,10 +1,14 @@
-<h2>Book Form</h2>
 <style type="text/css">
     label{
         width: 130px;
         display: inline-block;
+        border: black;
     }
 </style>
+
+<body class="card" class="navbar-expand-lg navbar-light bg-light">
+<div style="text-align: center;"> 
+<h1>Book Form</h1>
 <label for="bookId">BookId:</label>
 <input [(ngModel)]='book.bookId' type="number" placeholder="Enter a BookID"/>
 <br><br>
@@ -32,46 +36,11 @@
 <label for="bookId">Content:</label>
 <input [(ngModel)]='book.content' placeholder="Enter a Book content Shortly"/>
 <br><br>
-<label for="bookId">Active:</label>
-<input [(ngModel)]='book.active' placeholder="true/false"/>
-<br><br>
-<button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='save()'>Submit</button>
-
-<div *ngIf="books.length>0; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>
-    <h1>List Of Books</h1>
-<div style="text-align: center;">
-<table class="table" style="text-align: justify;" border="1" >
-    <thead style="background-color: rgb(97, 228, 141);">
-        <tr>
-            <th>BookId</th>
-            <th>BookLogo</th>
-            <th>Category</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-            <th>PublishedDate</th>
-            <th>Price</th>
-            <th>Content</th>
-            <th>Active</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor='let book of books'>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookId}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.bookLogo}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.category}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.title}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.author}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publisher}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.publishedDate}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.price}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.content}}</span></td>
-            <td style="background-color: rgb(206, 236, 214);"><span>{{book.active}}</span></td>
-        </tr>
-    </tbody>
-    </table>
+<div class="form-row">
+    <label class="col-sm-2 col-form-label">Active:</label>
+    <input name="active" type="radio" [value]=true [(ngModel)]='book.active'>True
+    <input name="active" type="radio" [value]=false [(ngModel)]='book.active'>False
 </div>
-
-</ng-template>
-<ng-template #elseBlock>{{message}}</ng-template>
+<button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='save()'>Submit</button>
+</div>
+</body>

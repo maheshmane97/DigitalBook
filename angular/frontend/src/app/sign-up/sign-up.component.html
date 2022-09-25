@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register Yourself..!</h6>
+                </div>
+                <form class="form-group" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label  class="form-label">Full Name</label>
+                        <input  [(ngModel)]='signUpform.name'  [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Enter a Full Name"><br>
+                        
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">UserName</label>
+                        <input  type="text"  [(ngModel)]='signUpform.userName'  [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter a UserName">
+                      </div>
+
+                        <div class="mb-3">
+                          <label class="form-label">Email address</label>
+                          <input  type="email"  [(ngModel)]='signUpform.emailId'  [ngModelOptions]="{standalone: true}" class="form-control" placeholder="Enter a emailId">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Password</label>
+                          <input  type="password" class="form-control" [(ngModel)]='signUpform.password'  [ngModelOptions]="{standalone: true}" placeholder="Enter a password" >
+                        </div>
+                        <button type="submit" class="btn btn-primary ">Sign Up</button>
+                        <div class="alert alert-warning" *ngIf="signUpform.submitted && isSignUpFailed">
+                            Signup failed!<br />{{ errorMessage }}
+                          </div>
+                </form>
+                <div class="alert alert-success" *ngIf="isSuccessful">
+                    Your registration is successful!
+                  </div>
+                <a style="color: aliceblue; margin-top: 10px;" routerLink="/digitalbooks/signin">Already Registered.? click here to LogIn</a>
+            </div>
+        </div>
+    </div>
+</div>

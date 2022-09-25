@@ -1,5 +1,5 @@
 .card{
-   margin-top: 5%;
+    margin-top: 5%;
     border: none;
     width: 500px;
     padding: 40px;
@@ -9,5 +9,21 @@
     transform: translate(-50%, -50%);
     background: rgb(152, 194, 152);
     background: linear-gradient(90deg,rgb(152, 194, 152) 0%, rgb(152, 194, 152) 100% );
-    
+}
+
+.card label h1,
+h6{
+    color: rgb(0, 0, 0);
+    font-size: medium;
+}
+label{
+    color: aliceblue;
+}
+
+.alert-danger{
+    color: red;
+}
+
+.alert{
+    color: black;
 }

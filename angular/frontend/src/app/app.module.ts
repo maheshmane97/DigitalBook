@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -14,11 +14,16 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { ReaderFormComponent } from './reader-form/reader-form.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 const routes: Routes=[
+  {path:'', redirectTo:'digitalbooks/login', pathMatch:'full'},
   {path:'digitalbooks', component:AddBookComponent },
   {path:'digitalbooks/author', component:BookFormComponent },
-  {path:'digitalbooks/readers', component:ReaderFormComponent}
+  {path:'digitalbooks/readers', component:ReaderFormComponent},
+  {path: 'digitalbook/signup', component: SignUpComponent},
+  {path: 'digitalbooks/signin', component: LogInComponent}
 ]
 @NgModule({
   declarations: [
@@ -26,10 +31,12 @@ const routes: Routes=[
     AppComponent,
     BookFormComponent,
     AddBookComponent,
-    ReaderFormComponent
+    ReaderFormComponent,
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
-    BrowserModule, MatButtonModule, MatToolbarModule, MatIconModule,
+    BrowserModule, MatButtonModule, MatToolbarModule, MatIconModule,ReactiveFormsModule,
     AppRoutingModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes), Ng2SearchPipeModule, BrowserAnimationsModule
   ],
   providers: [],

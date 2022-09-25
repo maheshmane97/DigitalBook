@@ -1,17 +1,34 @@
-<p>
-    <mat-toolbar color="primary">
-      <span>Digital Books</span>
-      <a mat-button routerLink='/digitalbooks' routerLinkActive="active" style="margin-right: 1%;">Create Book</a>
-      <a mat-button routerLink='/digitalbooks/author' routerLinkActive="active" style="margin-right: 1%;">Author</a>
-      <a mat-button routerLink='/digitalbooks/readers' routerLinkActive="active" style="margin-right: 1%;">Reader</a>
+   
+    <nav class="navbar navbar-expand navbar-light"  style="background-color: rgb(44, 162, 218);">
+      <a class="navbar-brand">Digital Books</a>
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="digitalbooks/author">Search Books</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="digitalbooks">CreateBooks</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="digitalbooks/readers">Get Books</a>
+        </li>
+      </ul>
+  
+  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="digitalbook/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" style="margin-left: 10%;" routerLink="digitalbooks/signin">Login</a>
+      </li>
+  </ul>
 
-    </mat-toolbar>
-  </p>
-  <h2>Welcome To World of BOOKs<h2>
-<!-- <nav>
-    <a mat-button routerLink='/digitalbooks' routerLinkActive="active" style="margin-right: 1%;">Digital Books</a>
-    <a routerLink='/digitalbooks/author' routerLinkActive="active" style="margin-right: 1%;">Save Book</a>
-    
-</nav> -->
+  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+  </ul>
+  </nav>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

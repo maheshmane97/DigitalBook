@@ -78,7 +78,6 @@ public class BookController extends BaseController {
 
 	// Get book according to readermailID and bookId
 	@GetMapping("/readers/{emailId}/books/{bookId}")
-	@PreAuthorize("hasRole('READER')")
 	public Book findBook(@PathVariable("emailId") String readerEmailId, @PathVariable Integer bookId) {
 		return bookService.readBook(readerEmailId, bookId);
 	}

@@ -8,14 +8,15 @@
         }
     </style>
     <p style="margin: 1%;">Search Books</p>
-    <label>Title:</label>
+    <label>ReaderMailId:</label>
     <input [(ngModel)]='readerMailId' placeholder="Enter a Book Title"/>
     <br><br>
-    <label>Price:</label>
+    <label>BookId:</label>
     <input [(ngModel)]='bookId' type="number" placeholder="Enter a bookId"/>
     <br><br>
 <button class="btn btn-primary" style="margin-left: 10%; size: 500mm;" (click)='search()'>Search</button>
 </div>
+<form action="center"></form>
 <div *ngIf="book1.length>0; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
     <h1>List Of Books</h1>

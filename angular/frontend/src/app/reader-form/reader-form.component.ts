@@ -7,8 +7,8 @@ import { BookService } from '../book.service';
   styleUrls: ['./reader-form.component.scss']
 })
 export class ReaderFormComponent implements OnInit {
-  readerMailId:string='reader@gmail.com'
-  bookId:number=101
+  readerMailId:string=''
+  bookId:number=0
   book1:any=[]
   message:any
   constructor(public bookService: BookService) { }
@@ -22,6 +22,7 @@ export class ReaderFormComponent implements OnInit {
     observable.subscribe(res=>{
       this.book1=res;
       console.log(res);
+      this.book1=res;
     },
     (error)=>{
         console.log("error:", error);

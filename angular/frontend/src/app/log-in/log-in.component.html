@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Log In</h1>
+                    <h6>Please Enter UserName and Password..!</h6>
+                </div>
+                <form class="form-group" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                          <label for="exampleInputUserName" class="form-label">User Name</label>
+                          <input type="text" [(ngModel)]='logInForm.userName'  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputUserName" >
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" [(ngModel)]='logInForm.password'  [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary ">Log In</button>
+                </form>
+                <div class="alert alert-success" *ngIf="isLoggedIn">
+                    Your LogIn is successful!
+                  </div>
+                <a style="color: aliceblue; margin-top: 10px;" routerLink="/digitalbook/signup">New User.! click here to SignUp</a>
+            </div>
+        </div>
+    </div>
+</div>
